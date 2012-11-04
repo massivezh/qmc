@@ -11,11 +11,13 @@ Usage
 -----
 
 A tiny GUI written using PyQt is provided (`gui.py`). Simply insert the onset and the dcset of each function to be minimized, as lists of integers separed by a comma and click "GO". For example, the XOR function `F = a'b + ab'` has the following truth table
-	     a   b   F(a,b)
-	 0:  0   0     0
-	 1:  0   1     1
-	 2:  1   0     1
-	 3:  1   1     0
+	    
+	    a   b   F(a,b)
+	0:  0   0     0
+	1:  0   1     1
+	2:  1   0     1
+	3:  1   1     0
+
 and can be represented as `ON(1,2)` plus an empty DC as the function is defined for all the input variables. The number of variables is inferred by the maximum value in the ONset or in the DCset.
 
 The algorithm can be used directly from within python code. An example of use is the following. To minimize the three-output combinatorial network
