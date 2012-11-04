@@ -1,7 +1,7 @@
 qmc
 ===
 
-[qmc] is a naive implementation of the Quine-McCluskey algorithm (https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm). The algorithm is used to optimize two level multi-output boolean functions. The algorithm implemented here is described in detail in the book "Reti Logiche" by C. Bolchini et al, published by Apogeo.
+`qmc` is a naive implementation of the [Quine-McCluskey algorithm](https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm). It can be used optimize two level multi-output boolean functions. The algorithm implemented here is described in detail in the book "Reti Logiche" by C. Bolchini et al, published by Apogeo.
 
 Given the ONset (the set of minterms - input for which the output is 1) and the DCset (don't care set - inputs for which it is not relevant the output) of the function to be optimized, the algorithm will output the boolean form of the optimized function.
 
@@ -10,13 +10,13 @@ The bibliographic reference for the algorithm hereby implemented is C.Bolchini e
 Usage
 -----
 
-A tiny GUI written using PyQt is provided (gui.py). Simply insert the onset and the dcset of each function to be minimized, as lists of integers separed by a comma and click "GO". For example, the XOR function F = a'b + ab' has the following truth table
-        a   b   F(a,b)
-    0:  0   0     0
-    1:  0   1     1
-    2:  1   0     1
-    3:  1   1     0
-and can be represented as ON(1,2) plus an empty DC as the function is defined for all the input variables. The number of variables is inferred by the maximum value in the ONset or in the DCset.
+A tiny GUI written using PyQt is provided (`gui.py`). Simply insert the onset and the dcset of each function to be minimized, as lists of integers separed by a comma and click "GO". For example, the XOR function `F = a'b + ab'` has the following truth table
+	     a   b   F(a,b)
+	 0:  0   0     0
+	 1:  0   1     1
+	 2:  1   0     1
+	 3:  1   1     0
+and can be represented as `ON(1,2)` plus an empty DC as the function is defined for all the input variables. The number of variables is inferred by the maximum value in the ONset or in the DCset.
 
 The algorithm can be used directly from within python code. An example of use is the following. To minimize the three-output combinatorial network
 
@@ -63,7 +63,7 @@ this code will print out:
 
     Cost: 7
 
-By setting VERBOSE = True, you can output to the console all the intermediate steps of the algorithm as it is executed.
+By setting `VERBOSE = True`, you can output to the console all the intermediate steps of the algorithm as it is executed.
 
 Known Bugs
 ----------
