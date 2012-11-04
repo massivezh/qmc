@@ -27,21 +27,21 @@ The algorithm can be used directly from within python code. An example of use is
     F3 = ON(0,2) DC(4,6)
 
 you can write the following code
-
-    q = QuineMcCluskey([
-                       QmcFunction([3,4,6,7], [0,2]),
-                       QmcFunction([3,4,6], [2,5]),
-                       QmcFunction([0,2], [4,6])
-                       ], LITERALS_COST_FUNCTION)
-    print ' --- [Expansion] Prime implicants: ---'
-    q.findPrimeImplicants()
-    q.printImplicantList()
-    q.printTable()
-    print 'Solution found:'
-    print q.simplify()
-    print 'Cost:', q.sol.getCost()
-
-this code will print out:
+```python
+q = QuineMcCluskey([
+                   QmcFunction([3,4,6,7], [0,2]),
+                   QmcFunction([3,4,6], [2,5]),
+                   QmcFunction([0,2], [4,6])
+                   ], LITERALS_COST_FUNCTION)
+print ' --- [Expansion] Prime implicants: ---'
+q.findPrimeImplicants()
+q.printImplicantList()
+q.printTable()
+print 'Solution found:'
+print q.simplify()
+print 'Cost:', q.sol.getCost()
+```
+and this is what you'll get on the console:
 
      --- [Expansion] Prime implicants: ---
       A = a'b  	110 	2 3 
