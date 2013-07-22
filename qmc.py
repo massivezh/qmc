@@ -152,8 +152,13 @@ class Implicant:
         return self.reduced
 
 class QmcFunction:
-    def __init__(self, ONset, DCset):
-        self.var_num = self.variableSetCardinality(ONset, DCset)
+    def __init__(self, ONset, OFFset, cnt):
+ 	DCset=range(2**cnt)
+	for i in ONset:
+		DCset.remove(i)
+	for i in OFFset:
+		DCset.remove(i)
+	self.var_num = self.variableSetCardinality(ONset, DCset)
         self.ONset = ONset
         self.DCset = DCset
         self.to_be_covered = ONset
